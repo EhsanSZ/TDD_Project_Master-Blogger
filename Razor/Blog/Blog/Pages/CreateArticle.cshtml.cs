@@ -1,6 +1,6 @@
+using Blog.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Blog.Models;
 using System.Security.Permissions;
 
 namespace Blog.Pages

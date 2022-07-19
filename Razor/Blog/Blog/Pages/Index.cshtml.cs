@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blog.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using System;
@@ -10,7 +11,7 @@ namespace Blog.Pages
 {
     public class IndexModel : PageModel
     {
-        //public List<ArticleViewModel> Articles { get; set; }
+        public List<ArticleViewModel> Articles { get; set; }
         private readonly BlogContext _context;
 
         public IndexModel(BlogContext context)
@@ -18,20 +19,20 @@ namespace Blog.Pages
             _context = context;
         }
 
-        //public void OnGet()
-        //{
-        //    Articles = _context.Articles
-        //        .Where(x => x.IsDeleted == false)
-        //        .Select(x => new ArticleViewModel
-        //        {
-        //            Id = x.Id,
-        //            Title = x.Title,
-        //            Picture = x.Picture,
-        //            PictureAlt = x.PictureAlt,
-        //            PictureTitle = x.PictureTitle,
-        //            ShortDescription = x.ShortDescription,
-        //        }).OrderByDescending(x => x.Id).ToList();
-        //}
+        public void OnGet()
+        {
+            Articles = _context.Articles
+                .Where(x => x.IsDeleted == false)
+                .Select(x => new ArticleViewModel
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    Picture = x.Picture,
+                    PictureAlt = x.PictureAlt,
+                    PictureTitle = x.PictureTitle,
+                    ShortDescription = x.ShortDescription,
+                }).OrderByDescending(x => x.Id).ToList();
+        }
 
         public IActionResult OnGetDelete(int id)
         {

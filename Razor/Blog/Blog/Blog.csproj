@@ -5,19 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\create-article.cshtml" />
+    <Content Remove="Pages\ArticleDetails.cshtml" />
+    <Content Remove="Pages\CreateArticle.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\create-article.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\create-article.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\create-article.cshtml" />
+    <None Include="Pages\ArticleDetails.cshtml" />
+    <None Include="Pages\CreateArticle.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +21,19 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\CreateArticle.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\ArticleDetails.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\CreateArticle.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\ArticleDetails.cshtml" />
   </ItemGroup>
 
 </Project>
